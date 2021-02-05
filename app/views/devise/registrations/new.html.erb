@@ -1,0 +1,43 @@
+<h2><%= t('.sign_up') %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+ 
+  <div class="field w-50">
+  <%= f.label :username %><br />
+  <%= f.email_field :username, class:"form-control" %>
+  </div>
+
+  <strong><%= f.label :email %></strong><br />
+  <div class="input-group field w-50">
+    <div class="input-group-prepend">
+      <span class="input-group-text">  <i class="fas fa-envelope"></i></span>
+    </div>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+  </div><br>
+
+  <strong><%= f.label :password %></strong>
+  <% if @minimum_password_length %>
+  <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+  <% end %><br />
+  <div class="input-group field w-50">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+      </div>
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+  </div><br>
+
+  <%= f.label :password_confirmation, style:"font-weight:bold;" %><br />
+  <div class="input-group field w-50">
+    <div class="input-group-prepend">
+      <span class="input-group-text"><i class="fas fa-lock"></i></span>
+    </div>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+  </div><br>
+
+  <div class="actions">
+    <%= f.submit t('.sign_up'), class:"btn btn-primary" %>
+  </div>
+<% end %><br>
+
+<%= render "devise/shared/links" %>
