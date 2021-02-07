@@ -2,13 +2,13 @@
 
 <% @users.each do |user| %>
   <div class="card w-50 mb-3">
-  <div class="card-body">
-    <span>id: <%= user.id %>　｜</span>
-    <%= link_to user_path(user.id) do %>
-      <%= user.username %>
-    <% end %>
-    <span>｜　<%= user.email %></span>
+    <div class="card-body">
+      <span>id: <%= user.id %>　｜</span>
+      <%= link_to user_path(user.id) do %>
+        <%= user.username %>
+      <% end %>
+      <span>｜<%= user.email %></span>
+      <span>｜　　　　　　<%= render 'follow_form', user: user %></span>
+    </div>
   </div>
-
- </div>
  <% end %>
