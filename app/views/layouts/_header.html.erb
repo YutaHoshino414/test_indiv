@@ -1,7 +1,7 @@
-
+<h2 class="title">FukuOta</h2>
 <div class="log_in", style="text-align:right;">  
     <% if user_signed_in? %>
-      <p style="text-align:right;">ようこそ、<%= current_user.username %>さん</p>
+      <p style="text-align:right;">ようこそ、<%= current_user.username %>さん　　</p>
       <%= link_to user_path(current_user.id) do%>
       <strong><i class="fas fa-user-cog"></i><%= current_user.username %></strong>
       <% end %><span>|</span>
@@ -9,5 +9,5 @@
     <% else %>
       <%= link_to "新規登録", new_user_registration_path %>
       <%= link_to "ログイン", new_user_session_path %>
-    <% end %><hr>
-</div>
+    <% end %>
+</div><hr>

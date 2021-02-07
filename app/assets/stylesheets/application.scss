@@ -15,6 +15,21 @@
  */
  @import "bootstrap";
 
- h2{
+ h3{
    display:inline-block;
+ }
+ .title{
+  display:inline-block;
+  font-family: cursive;
+  padding-top: 10px;
+}
+
+ .log_in{
+  // display:inline-block;
+  float: right;
+  margin-top: 15px;
+ }
+
+ .log_in p{
+  display:inline-block;
  }

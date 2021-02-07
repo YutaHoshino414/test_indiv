@@ -1,5 +1,6 @@
-<h2><%= @user.username %>のページ</h2><br><br>
-<table class="table  w-50">
+<h3><%= @user.username %>のページ</h3>
+<%= link_to "編集", edit_user_path(@user.id), class:"btn btn-success" %><br><br>
+<table class="table table-striped w-50">
   <tbody>
      <tr>
        <th>ユーザーid</th>
@@ -19,6 +20,13 @@
       </tr>
   </tbody>
 </table>
-<%= link_to "編集", edit_user_path(@user.id), class:"btn btn-success" %>
+
 <hr>
-<h2>フォローしているユーザー</h2>
+<h3>フォロー中のユーザー</h3><br>
+<% @user.following.each do |user| %>
+  <li>
+    <%= link_to user_path(user) do %>
+      <%= user.username %>
+    <% end %>
+  /<%= user.email %></li>
+<% end %>
