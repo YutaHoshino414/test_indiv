@@ -2,29 +2,42 @@
   <div class="col-3">
     <h4>サイドメニュー</h4>
     <div class="list-group"><br>
-      <a href="#" class="list-group-item">投稿する</a>
-      <a href="#" class="list-group-item">投稿中アイテム</a>
-      <a href="#" class="list-group-item">売却済み</a>
-      <a href="#" class="list-group-item">　　</a>
-    </div><br><br><br><br>
+    <%= link_to new_item_path do %>
+      <span class="list-group-item">投稿する</span>
+    <% end %>
+      <span class="list-group-item">投稿中アイテム</span>
+      <span class="list-group-item">売却済み</span>
+    </div><br><br><br>
+
+    <h5>探す</h5>
+    <div class="list-group">
+      <%= link_to items_path do %>
+        <span class="list-group-item">みんなの投稿</span>
+      <% end %>
+      <%= link_to users_path do %>
+        <span class="list-group-item">ユーザー一覧</span>
+      <% end %>
+      <span class="list-group-item">Search</span>
+      <span class="list-group-item">Search</span>
+    </div><br><br><br>
+
     <h5>設定</h5>
-    <div class="list-group"><br>
-    <%= link_to edit_user_path(@user.id) do %>
-      <span class="list-group-item">プロフィール編集する</span>
-        <% end %>
+    <div class="list-group">
+      <%= link_to edit_user_path(@user.id) do %>
+        <span class="list-group-item">プロフィール編集する</span>
+      <% end %>
       <span class="list-group-item">setting</span>
       <span class="list-group-item">setting</span>
     </div><br>
   </div>
   <div class="col-9">
-    <h3><%= @user.username %>のページ</h3><br>
     <div class="jumbotron bg-info">
       <div class="row">
         <div class="col-3">
           <i class="fas fa-user-circle"></i>
         </div>
         <div class="col-9">
-          <table class="table w-50">
+          <table class="table w-75">
            <tbody>
              <tr>
                <th>ユーザーid</th>
