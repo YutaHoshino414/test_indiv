@@ -1,14 +1,27 @@
-<h2>ユーザー一覧</h2><br><br>
-
-<% @users.each do |user| %>
-  <div class="card w-50 mb-3">
-    <div class="card-body">
-      <span>id: <%= user.id %>　｜</span>
-      <%= link_to user_path(user.id) do %>
-        <%= user.username %>
-      <% end %>
-      <span>｜<%= user.email %></span>
-      <span>｜　　　　　　<%= render 'follow_form', user: user %></span>
+<div class="row"> 
+  <div class="col-3">
+    <h2>サイド</h2>
+    <div class="list-group"><br>
+      <a href="#" class="list-group-item">検索する</a>
+      <a href="#" class="list-group-item">Search User</a>
+      <a href="#" class="list-group-item">Search User</a>
     </div>
+  </div> 
+  
+  <div class="col-9">
+  <h2>ユーザー一覧</h2><br>
+    <% @users.each do |user| %>
+      <div class="card w-75 mb-3">
+        <div class="card-body">
+        <i class="fas fa-user-circle"></i>
+          <span>　id: <%= user.id %>｜</span>
+          <%= link_to user_path(user.id) do %>
+            <%= user.username %>
+          <% end %>
+          <span>｜<%= user.email %></span>
+          <span>｜　　　<%= render 'follow_form', user: user %></span>
+        </div>
+      </div>
+     <% end %>
   </div>
- <% end %>
+</div>

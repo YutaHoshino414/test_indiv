@@ -18,10 +18,24 @@
  h3{
    display:inline-block;
  }
+
+ .header{
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16);
+ }
+
  .title{
   display:inline-block;
-  font-family: cursive;
+  font-family: impact;
   padding-top: 10px;
+}
+.fa-globe{
+  font-size: 35px;
+  margin-left: 5px;
+  color:coral;
+}
+.fa-share-alt{
+  font-size: 30px;
+  margin-left: 5px;
 }
 
  .log_in{
@@ -32,4 +46,8 @@
 
  .log_in p{
   display:inline-block;
+ }
+
+ .fa-user-circle{
+  font-size: 40px;
  }
