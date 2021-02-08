@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'homes#index'
   
+  resources :items
+  
   resources :relationships, only: [:create, :destroy]
   devise_for :users
   devise_scope :user do

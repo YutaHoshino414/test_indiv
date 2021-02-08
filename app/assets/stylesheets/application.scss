@@ -15,12 +15,17 @@
  */
  @import "bootstrap";
 
+body{
+  background-color: rgb(247, 247, 247);
+}
+
  h3{
    display:inline-block;
  }
 
  .header{
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16);
+  background-color: #fff;
  }
 
  .title{
@@ -31,7 +36,7 @@
 .fa-globe{
   font-size: 35px;
   margin-left: 5px;
-  color:coral;
+  // color:coral;
 }
 .fa-share-alt{
   font-size: 30px;
